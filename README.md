@@ -1,29 +1,32 @@
 # Nextion Auto Font Generator
 
-An automated interactive tool that converts `.ttf` and `.otf` fonts to Nextion-compatible `.zi` format with menu-based configuration.
+Automated tool that converts TTF/OTF fonts to Nextion-compatible .zi format with interactive menu-based configuration.
 
-## 📁 Directory Structure
+## Directory Structure
 
 ```
 ROOT_FOLDER/
-├── fonts/              ← Place your .ttf/.otf files here
-├── output/             ← Generated .zi files appear here
-├── setup.bat           ← Double-click to start (Main Entry)
-├── launcher.ps1        ← Interactive menu system
-├── generator.ps1       ← Font generation engine
-├── settings.ini        ← Auto-generated config (optional)
-├── ZiLib.dll           ← Required library
+├── fonts/              (Place your .ttf/.otf files here)
+├── output/             (Generated .zi files appear here)
+├── setup.bat
+├── launcher.ps1
+├── generator.ps1
+├── settings.ini
+├── ZiLib.dll
 └── README.md
 ```
 
-## 🚀 Quick Start
+**Note:** Create a `fonts/` folder and place your font files there before running the generator.
 
-### Easiest Method (Recommended)
-**Double-click `setup.bat`** — Automatically unblocks files and runs the generator.
+## Usage
 
-### Alternative: Manual PowerShell Method
+### Method 1: Interactive Menu (Recommended)
 
-1. **Edit `settings.ini`** with Notepad:
+Double-click `setup.bat` and follow the prompts.
+
+### Method 2: Manual Configuration
+
+1. Edit `settings.ini`:
    ```ini
    [Settings]
    FontName=YourFont.ttf
@@ -32,33 +35,31 @@ ROOT_FOLDER/
    Encoding=iso_8859_9
    ```
 
-2. **Open PowerShell in this folder:**
-   - Hold `Shift` + Right-click in the folder
-   - Select **"Open PowerShell window here"**
+2. Open PowerShell in this folder (Shift + Right-click → "Open PowerShell window here")
 
-3. **First time only - Unblock files:**
+3. Unblock files (first time only):
    ```powershell
    Unblock-File -Path .\generator.ps1
    Unblock-File -Path .\ZiLib.dll
    ```
 
-4. **Run the script:**
+4. Run the generator:
    ```powershell
    .\generator.ps1
    ```
 
-## ⚙️ Configuration (settings.ini)
+## Configuration
 
-Edit `settings.ini` with Notepad to customize:
+Edit `settings.ini` to customize font generation:
 
 | Setting | Description | Example |
 |---------|-------------|---------|
-| `FontName` | Font filename in `fonts/` folder | `Arial.ttf` |
-| `StartSize` | Minimum font size (px) | `12` |
-| `EndSize` | Maximum font size (px) | `100` |
+| `FontName` | Font filename in fonts/ folder | `Arial.ttf` |
+| `StartSize` | Minimum font size in pixels | `12` |
+| `EndSize` | Maximum font size in pixels | `100` |
 | `Encoding` | Character encoding | `iso_8859_9` |
 
-### Available Encodings
+### Supported Encodings
 
 | Code | Description |
 |------|-------------|
@@ -70,46 +71,46 @@ Edit `settings.ini` with Notepad to customize:
 | `shift_jis` | Japanese |
 | `gb2312` | Chinese (Simplified) |
 
-## 📤 Output
+## Output
 
-Generated files are placed in:
+Generated files are saved to:
 ```
-output/FontName_ENCODING/
-└── FontName_Size_ENCODING.zi
+output/FontName_ENCODING/FontName_Size_ENCODING.zi
 ```
 
 Example: `output/Arial_ISO-8859-9/Arial_12_ISO-8859-9.zi`
 
-
-
 ---
 
-# Nextion Auto Font Generator (Otomatik Font Oluşturucu)
+# Nextion Auto Font Generator
 
-Menü tabanlı yapılandırma ile TTF/OTF fontlarını Nextion uyumlu `.zi` formatına dönüştüren otomatik interaktif araç.
+TTF/OTF fontlarını Nextion uyumlu .zi formatına dönüştüren otomatik araç.
 
-## 📁 Dosya Yapısı
+## Dosya Yapısı
 
 ```
 ANA_KLASÖR/
-├── fonts/              ← Font dosyalarınızı buraya koyun
-├── output/             ← Oluşturulan .zi dosyaları burada
-├── setup.bat           ← Çift tıklayarak başlatın (Ana Giriş)
-├── launcher.ps1        ← İnteraktif menü sistemi
-├── generator.ps1       ← Font oluşturma motoru
-├── settings.ini        ← Otomatik oluşturulan ayarlar (opsiyonel)
-├── ZiLib.dll           ← Gerekli kütüphane
+├── fonts/              (Font dosyalarınızı buraya koyun)
+├── output/             (Oluşturulan .zi dosyaları burada)
+├── setup.bat
+├── launcher.ps1
+├── generator.ps1
+├── settings.ini
+├── ZiLib.dll
 └── README.md
 ```
 
-## 🚀 Hızlı Başlangıç
+**Not:** Generator'ı çalıştırmadan önce `fonts/` klasörü oluşturun ve font dosyalarınızı oraya yerleştirin.
 
-### Kullanım (Tek Adım!)
-**`setup.bat` dosyasına çift tıklayın** — İnteraktif menü açılır:
+## Kullanım
 
-### Alternatif: Manuel PowerShell Yöntemi
+### Yöntem 1: İnteraktif Menü (Önerilen)
 
-1. **`settings.ini` dosyasını düzenleyin** (Not Defteri ile):
+`setup.bat` dosyasına çift tıklayın ve yönergeleri takip edin.
+
+### Yöntem 2: Manuel Yapılandırma
+
+1. `settings.ini` dosyasını düzenleyin:
    ```ini
    [Settings]
    FontName=FontDosyaniz.ttf
@@ -118,33 +119,31 @@ ANA_KLASÖR/
    Encoding=iso_8859_9
    ```
 
-2. **Bu klasörde PowerShell açın:**
-   - Klasörde `Shift` basılı tutarak sağ tıklayın
-   - **"PowerShell penceresini buradan aç"** seçin
+2. Bu klasörde PowerShell açın (Shift + Sağ tık → "PowerShell penceresini buradan aç")
 
-3. **Sadece ilk seferde - Dosya engellemesini kaldırın:**
+3. Dosya engellemesini kaldırın (sadece ilk seferde):
    ```powershell
    Unblock-File -Path .\generator.ps1
    Unblock-File -Path .\ZiLib.dll
    ```
 
-4. **Scripti çalıştırın:**
+4. Generator'ı çalıştırın:
    ```powershell
    .\generator.ps1
    ```
 
-## ⚙️ Yapılandırma (settings.ini)
+## Yapılandırma
 
-`settings.ini` dosyasını Not Defteri ile düzenleyin:
+`settings.ini` dosyasını düzenleyin:
 
 | Ayar | Açıklama | Örnek |
 |------|----------|-------|
-| `FontName` | `fonts/` klasöründeki dosya adı | `Arial.ttf` |
-| `StartSize` | Minimum font boyutu (px) | `12` |
-| `EndSize` | Maksimum font boyutu (px) | `100` |
+| `FontName` | fonts/ klasöründeki dosya adı | `Arial.ttf` |
+| `StartSize` | Minimum font boyutu (piksel) | `12` |
+| `EndSize` | Maksimum font boyutu (piksel) | `100` |
 | `Encoding` | Karakter kodlaması | `iso_8859_9` |
 
-### Mevcut Kodlamalar
+### Desteklenen Kodlamalar
 
 | Kod | Açıklama |
 |-----|----------|
@@ -156,13 +155,11 @@ ANA_KLASÖR/
 | `shift_jis` | Japonca |
 | `gb2312` | Çince (Basitleştirilmiş) |
 
-## 📤 Çıktı
+## Çıktı
 
-Oluşturulan dosyalar şurada:
+Oluşturulan dosyalar:
 ```
-output/FontAdı_KODLAMA/
-└── FontAdı_Boyut_KODLAMA.zi
+output/FontAdı_KODLAMA/FontAdı_Boyut_KODLAMA.zi
 ```
 
 Örnek: `output/Arial_ISO-8859-9/Arial_12_ISO-8859-9.zi`
-
